@@ -40,12 +40,12 @@
             <artifactId>google-oauth-client-jetty</artifactId>
             <version>1.35.0</version>
         </dependency>
-
+<!-- 
         <dependency>
             <groupId>com.google.apis</groupId>
             <artifactId>google-api-services-calendar</artifactId>
             <version>v3-rev411-1.25.0</version>
-        </dependency>
+        </dependency> -->
 
 
         <dependency>

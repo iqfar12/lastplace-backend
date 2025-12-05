@@ -73,6 +73,7 @@ public class GoogleCalendarService {
     }
     
     private CalendarEventDto parseEvent(Event event) {
+        log.debug(event.toString());
         String description = event.getDescription() != null ? event.getDescription() : "";
         
         CalendarEventDto.CalendarEventDtoBuilder builder = CalendarEventDto.builder()
@@ -81,16 +82,16 @@ public class GoogleCalendarService {
                 .description(description);
         
         // Parse start and end times
-        if (event.getStart() != null && event.getStart().getDateTime() != null) {
+        if (event.getStart() != null && event.getStart().getDate() != null) {
             builder.startTime(LocalDateTime.ofInstant(
-                java.time.Instant.ofEpochMilli(event.getStart().getDateTime().getValue()),
+                java.time.Instant.ofEpochMilli(event.getStart().getDate().getValue()),
                 ZoneId.systemDefault()
             ));
         }
         
-        if (event.getEnd() != null && event.getEnd().getDateTime() != null) {
+        if (event.getEnd() != null && event.getEnd().getDate() != null) {
             builder.endTime(LocalDateTime.ofInstant(
-                java.time.Instant.ofEpochMilli(event.getEnd().getDateTime().getValue()),
+                java.time.Instant.ofEpochMilli(event.getEnd().getDate().getValue()),
                 ZoneId.systemDefault()
             ));
         }

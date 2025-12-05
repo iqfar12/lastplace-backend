@@ -36,6 +36,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/venues/*/events").permitAll()
                 .requestMatchers("/api/venues/*").permitAll()
                 .requestMatchers("/api/venues").permitAll()
+                .requestMatchers("/v3/api-docs").permitAll()
                 .anyRequest().authenticated()
             );
         

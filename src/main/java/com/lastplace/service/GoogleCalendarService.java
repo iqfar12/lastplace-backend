@@ -73,7 +73,6 @@ public class GoogleCalendarService {
     }
     
     private CalendarEventDto parseEvent(Event event) {
-        log.warn(event.toString());
         String description = event.getDescription() != null ? event.getDescription() : "";
         
         CalendarEventDto.CalendarEventDtoBuilder builder = CalendarEventDto.builder()
